@@ -30,7 +30,7 @@ try {
   $tablas = ['razas', 'clases', 'personajes', 'hechizos', 'objetos_magicos'];
 
   echo "<html><head><title>Consulta de Datos</title></head><body>";
-  echo "<h1>Datos de la base de datos Fantasía RPG</h1>";
+  echo "<h1>Datos de la base de datos RPG</h1>";
 
   foreach ($tablas as $tabla) {
     echo "<h2>Tabla: $tabla</h2>";
