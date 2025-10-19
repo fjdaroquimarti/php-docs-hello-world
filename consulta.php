@@ -39,27 +39,27 @@ try {
    
   // Ejemplo: mostrar datos de todas las tablas
   $tablas = ["razas", "clases", "personajes", "hechizos", "objetos_magicos"];
-  foreach ($tablas as $tabla) {
-    $resultado = $pdo->query("SELECT * FROM $tabla");
-    echo "<p> Numero de filas: $resultado->num_rows</p>";
-    if ($resultado->num_rows > 0) {
-        echo "<h2>Tabla: $tabla</h2><table border='1'><tr>";
-        while ($campo = $resultado->fetch_field()) {
-            echo "<th>{$campo->name}</th>";
-        }
-        echo "</tr>";
-        while ($fila = $resultado->fetch_assoc()) {
-            echo "<tr>";
-            foreach ($fila as $valor) {
-                echo "<td>$valor</td>";
-            }
-            echo "</tr>";
-        }
-        echo "</table><br>";
-    } else {
-        echo "<p>No hay datos en la tabla $tabla.</p>";
-    }
-  }
+// foreach ($tablas as $tabla) {
+//    $resultado = $pdo->query("SELECT * FROM $tabla");
+//    echo "<p> Numero de filas: $resultado->num_rows</p>";
+//    if ($resultado->num_rows > 0) {
+//        echo "<h2>Tabla: $tabla</h2><table border='1'><tr>";
+//        while ($campo = $resultado->fetch_field()) {
+//            echo "<th>{$campo->name}</th>";
+//        }
+//        echo "</tr>";
+//        while ($fila = $resultado->fetch_assoc()) {
+//            echo "<tr>";
+//            foreach ($fila as $valor) {
+//                echo "<td>$valor</td>";
+//            }
+//            echo "</tr>";
+//        }
+//        echo "</table><br>";
+//    } else {
+//        echo "<p>No hay datos en la tabla $tabla.</p>";
+//    }
+//  }
 } catch (PDOException $e) {
   error_log('Error de conexión PDO: ' . $e->getMessage());
   echo "Error al conectar con la base de datos: " . htmlspecialchars($e->getMessage());
