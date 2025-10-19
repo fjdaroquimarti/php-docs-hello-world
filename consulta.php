@@ -35,7 +35,8 @@ try {
    //Ejemplo: mostrar satos de la tabla razas
    $resultado = $pdo->query('SELECT * FROM razas;');
    $fila = $resultado->fetch();
-   echo "<p> Nombre: $fila['nombre']</p>";
+   //echo "<p> Nombre: $fila['nombre']</p>";
+   echo "<p>$fila['nombre']</p>";
    
   // Ejemplo: mostrar datos de todas las tablas
   $tablas = ["razas", "clases", "personajes", "hechizos", "objetos_magicos"];
