@@ -31,6 +31,12 @@ try {
   ];
   // Crear la conexión PDO
   $pdo = new PDO($dsn, $dbUser, $dbPass, $options);
+
+   //Ejemplo: mostrar satos de la tabla razas
+   $resultado = $pdo->query("SELECT * FROM razas");
+   $fila = $resultado->fetch();
+   echo $fila['nombre'];
+   
   // Ejemplo: mostrar datos de todas las tablas
   $tablas = ["razas", "clases", "personajes", "hechizos", "objetos_magicos"];
   foreach ($tablas as $tabla) {
