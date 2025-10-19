@@ -33,7 +33,7 @@ try {
   $pdo = new PDO($dsn, $dbUser, $dbPass, $options);
 
    //Ejemplo: mostrar satos de la tabla razas
-   $resultado = $pdo->query("SELECT * FROM razas");
+   $resultado = $pdo->query("SELECT * FROM razas;");
    $fila = $resultado->fetch();
    echo "<p> Nombre: $fila['nombre']</p>";
    
