@@ -40,24 +40,24 @@ try {
    
   // Ejemplo: mostrar datos de todas las tablas
   $tablas = ["razas", "clases", "personajes", "hechizos", "objetos_magicos"];
- foreach ($tablas as $tabla) {
+  foreach ($tablas as $tabla) {
     $resultado = $pdo->query("SELECT * FROM $tabla");
-    $num_filas = $resultado->num_rows;
-    echo "<p> Numero deeee filas de la tabla ".$tabla.": ".$num_filas."</p>";
+    //$num_filas = $resultado->num_rows;
+    //echo "<p> Numero de filas de la tabla ".$tabla.": ".$num_filas."</p>";
 //    if ($resultado->num_rows > 0) {
-//        echo "<h2>Tabla: $tabla</h2><table border='1'><tr>";
-//        while ($campo = $resultado->fetch_field()) {
-//            echo "<th>{$campo->name}</th>";
-//        }
-//        echo "</tr>";
-//        while ($fila = $resultado->fetch_assoc()) {
-//            echo "<tr>";
-//            foreach ($fila as $valor) {
-//                echo "<td>$valor</td>";
-//            }
-//            echo "</tr>";
-//        }
-//        echo "</table><br>";
+    echo "<h2>Tabla: $tabla</h2><table border='1'><tr>";
+    while ($campo = $resultado->fetch_field()) {
+      echo "<th>{$campo->name}</th>";
+    }
+      echo "</tr>";
+    while ($fila = $resultado->fetch_assoc()) {
+      echo "<tr>";
+      foreach ($fila as $valor) {
+         echo "<td>$valor</td>";
+      }
+      echo "</tr>";
+   }
+   echo "</table><br>";
 //    } else {
 //        echo "<p>No hay datos en la tabla $tabla.</p>";
 //    }
