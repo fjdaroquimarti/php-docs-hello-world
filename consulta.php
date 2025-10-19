@@ -36,7 +36,7 @@ try {
    $resultado = $pdo->query('SELECT * FROM razas;');
    $fila = $resultado->fetch();
    //echo "<p> Nombre: $fila['nombre']</p>";
-   echo "<p>$fila['nombre']</p>";
+   echo "<p> Nombre: ".$fila['nombre']."</p>";
    
   // Ejemplo: mostrar datos de todas las tablas
   $tablas = ["razas", "clases", "personajes", "hechizos", "objetos_magicos"];
