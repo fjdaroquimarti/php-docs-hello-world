@@ -50,3 +50,8 @@ $tablas = ["razas", "clases", "personajes", "hechizos", "objetos_magicos"];
 foreach ($tablas as $tabla) {
     mostrarTabla($pdo, $tabla);
 }
+} catch (PDOException $e) {
+error_log('Error de conexión PDO: ' . $e->getMessage());
+echo "Error al conectar con la base de datos: " . htmlspecialchars($e->getMessage());
+exit;
+}
