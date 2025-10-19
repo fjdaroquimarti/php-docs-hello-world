@@ -41,7 +41,7 @@ try {
   $tablas = ["razas", "clases", "personajes", "hechizos", "objetos_magicos"];
   foreach ($tablas as $tabla) {
     $resultado = $pdo->query("SELECT * FROM $tabla");
-    if ($resultado->num_rows() > 0) {
+    if (mysql_num_rows($resultado) > 0) {
         echo "<h2>Tabla: $tabla</h2><table border='1'><tr>";
         while ($campo = $resultado->fetch_field()) {
             echo "<th>{$campo->name}</th>";
