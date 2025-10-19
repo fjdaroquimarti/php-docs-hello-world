@@ -24,7 +24,7 @@ PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
 ];
 // Crear la conexión PDO
 $pdo = new PDO($dsn, $dbUser, $dbPass, $options);
-// Ejemplo: consulta sencilla
+// Ejemplo: mostrar datos de todas las tablas
 function mostrarTabla($conexion, $tabla) {
     $resultado = $conexion->query("SELECT * FROM $tabla");
     if ($resultado->num_rows > 0) {
